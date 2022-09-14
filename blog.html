@@ -46,7 +46,19 @@
         <h3>
             2. Global scope vs block scope
         </h3>
-        <p></p>
+        <p>
+            We often identify those scopes as local scopes and identify the top-level scope as the global scope. In a
+            browser environment, the global scope is controlled by the window object while in Node.js, it’s controlled
+            by the global object.
+
+            It’s hard to completely avoid the global scope, unless you’re coding purely functional style, but you should
+            minimize the use of any global variables because they represent a state and having that defined globally
+            makes it more vulnerable to conflicts and data corruption.
+            Block scopes are what you get when you use if statements, for statements, and the like. You can also use
+            them stand-alone with a simple begin-end curly braces {}, not to be confused with empty object literals.
+
+
+        </p>
 
         <!-- question 3 -->
         <br>
