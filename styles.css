@@ -149,11 +149,11 @@ button {
   cursor: pointer;
 }
 
-#histories {
+/* #histories {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
+} */
 
 .card {
   width: 100%;
@@ -171,6 +171,7 @@ button {
       rgba(255, 255, 255, 0.05) 99.85%);
   backdrop-filter: blur(5px);
   margin-bottom: 30px;
+  text-align: center;
 }
 
 #modal-background {
@@ -185,7 +186,9 @@ button {
   top: 0;
 }
 
-@media only screen and (max-width: 700px) {
+
+/* responsive for mobile devices */
+@media only screen and (max-width: 576px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
@@ -193,5 +196,23 @@ button {
 
   .card {
     flex-direction: column;
+  }
+}
+
+/* responsive for desktop #histories */
+@media only screen and (min-width: 577px) {
+  .box-container {
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  #histories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
