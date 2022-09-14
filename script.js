@@ -78,6 +78,7 @@ const gameOver = () => {
   // make it inactive
   display.classList.add("inactive");
   // show result
+  // errorCount++
   resultModal.innerHTML += `
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
@@ -133,7 +134,7 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = (currentTime - startTime) / 1000;
+  const finalTime = parseInt(timeSpent)
 
-
-  document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
+  document.getElementById("show-time").innerHTML = `${startTime ? finalTime : 0} seconds`;
 }, 1000);
