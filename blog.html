@@ -84,7 +84,43 @@
         <h3>
             4. Describe how many ways we get undefined
         </h3>
-        <p></p>
+        <p>undefined is a property of the global object. That is, it is a variable in global scope. The initial value of
+            undefined is the primitive value undefined. <br>
+            JavaScript uses the undefined value in the following situations:</p>
+
+        <p>
+            1) <strong> Accessing an uninitialized variable:</strong>
+
+            When you declare a variable and don’t initialize it to a value, the variable will have a value of
+            undefined. It’s a good practice to always initialize a variable whenever possible. In this example, you can
+            initialize the counter variable to zero.
+        </p>
+
+        <p>
+            <strong>2) Accessing a non-existing property of an object:
+            </strong>If you access a non-existing property of an object, you’ll get undefined.It’s good practice to
+            check if the property exists before accessing it. JavaScript provides you with some ways to do so.
+
+            And the most common way to verify whether the object has a property is to use the in operator
+        </p>
+
+        <p>
+            <strong>3) Function parameters:
+            </strong>When you call a function with a number of parameters, you often pass the same number of
+            arguments.But when you call the function and don’t pass all the arguments, the parameters
+            inside the function becomes undefined.
+        </p>
+
+        <p>
+            <strong>4) Functions return a value:
+            </strong>A function that doesn’t have a return statement implicitly returns undefined. Likewise, when a
+            function has a return statement without an expression, it also returns undefined.
+        </p>
+        <p>
+            <strong>5) Accessing out-of-bounds array elements:
+            </strong>
+            When you access an array element that is out-of-bounds, you’ll get the undefined value.
+        </p>
     </main>
 </body>
 
