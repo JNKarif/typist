@@ -21,24 +21,22 @@
     <main>
         <!-- question 1 -->
         <h3>
-            1. Local vs session storage
+            1. localStorage vs sessionStorage
         </h3>
         <p>
-            The main difference between localStorage and sessionStorage is that sessionStorage is unique per tab. If you
-            close the tab the sessionStorage gets deleted, localStorage does not. Also you cannot communicate between
-            tabs
-            :)
+            The main and only difference between
+            localStorage and sessionStorage the time of
+            expire.
 
-            Another subtle difference is that for example on Safari (8.0.3) localStorage has a limit of 2551 k
-            characters
-            but sessionStorage has unlimited storage
+            In localStorage data is not cleared
+            until we delete it
+            but in sessionStorage data is cleared
+            automatically after finishing the session.
+            <br>
+            If we want to share data among
+            multiple windows we should use localStorage. However, if we don't want
+            to do so than we can use sessionStorage.
 
-            On Chrome (v43) both localStorage and sessionStorage are limited to 5101 k characters (no difference between
-            normal / incognito mode)
-
-            On Firefox both localStorage and sessionStorage are limited to 5120 k characters (no difference between
-            normal /
-            private mode )
         </p>
         <!-- question 2 -->
         <br>
@@ -47,15 +45,12 @@
             2. Global scope vs block scope
         </h3>
         <p>
-            We often identify those scopes as local scopes and identify the top-level scope as the global scope. In a
-            browser environment, the global scope is controlled by the window object while in Node.js, it’s controlled
-            by the global object.
+            In global scope we can access the variable from everywhere. However, if we declare variable inside {} block
+            we can get access only inside the block.
+            Variable declared by var will not follow the block scope but let and const will follow. Block scope also
+            called a sub-type of local scope. It is asserted that to use global variable is not good practice when they
+            are not needed as all block variable can get access.
 
-            It’s hard to completely avoid the global scope, unless you’re coding purely functional style, but you should
-            minimize the use of any global variables because they represent a state and having that defined globally
-            makes it more vulnerable to conflicts and data corruption.
-            Block scopes are what you get when you use if statements, for statements, and the like. You can also use
-            them stand-alone with a simple begin-end curly braces {}, not to be confused with empty object literals.
 
 
         </p>
@@ -66,61 +61,48 @@
         <h3>
             3. What is the event loop in javaScript?
         </h3>
-        <p>JavaScript has a runtime model based on an event loop, which is responsible for executing the code,
-            collecting and processing events, and executing queued sub-tasks. This model is quite different from models
-            in other languages like C and Java.A JavaScript runtime uses a message queue, which is a list of messages to
-            be processed. Each message has an associated function that gets called to handle the message.
+        <p>
+            The event loop is described to hold a runtime model for
+            JavaScript's asynchronous programming which is not similar for C and Java. In other words we can say an
+            event loop pulls stuff out of the queue and
+            keeps onto the function call stack one after
+            another whenever the call stack is
+            empty.
 
-            At some point during the event loop, the runtime starts handling the messages on the queue, starting with
-            the oldest one. To do so, the message is removed from the queue and its corresponding function is called
-            with the message as an input parameter. As always, calling a function creates a new stack frame for that
-            function's use.
 
-            The processing of functions continues until the stack is once again empty. Then, the event loop will process
-            the next message in the queue (if there is one).</p>
+        </p>
         <!-- question 4 -->
         <br>
         <br>
         <h3>
             4. Describe how many ways we get undefined?
         </h3>
-        <p>undefined is a property of the global object. That is, it is a variable in global scope. The initial value of
-            undefined is the primitive value undefined. <br>
+        <p>undefined is a property of the global object. That is, it is a variable in global scope. <br>
             JavaScript uses the undefined value in the following situations:</p>
 
         <p>
-            1) <strong> Accessing an uninitialized variable:</strong>
-
-            When you declare a variable and don’t initialize it to a value, the variable will have a value of
-            undefined. It’s a good practice to always initialize a variable whenever possible. In this example, you can
-            initialize the counter variable to zero.
+            1) The variable will have a value of
+            undefined if it was uninitialized.
         </p>
 
         <p>
-            <strong>2) Accessing a non-existing property of an object:
-            </strong>If you access a non-existing property of an object, you’ll get undefined.It’s good practice to
-            check if the property exists before accessing it. JavaScript provides you with some ways to do so.
-
-            And the most common way to verify whether the object has a property is to use the in operator
+            2) If you access a non-existing property of an object, you’ll get undefined.
         </p>
 
         <p>
-            <strong>3) Function parameters:
-            </strong>When you call a function with a number of parameters, you often pass the same number of
-            arguments.But when you call the function and don’t pass all the arguments, the parameters
+            3)
+            When we don’t pass all the arguments at the time of calling the function, the parameters
             inside the function becomes undefined.
+
+
+
+
         </p>
 
         <p>
-            <strong>4) Functions return a value:
-            </strong>A function that doesn’t have a return statement implicitly returns undefined. Likewise, when a
-            function has a return statement without an expression, it also returns undefined.
+            4) If we do not return a value it implicitly returns undefined.
         </p>
-        <p>
-            <strong>5) Accessing out-of-bounds array elements:
-            </strong>
-            When you access an array element that is out-of-bounds, you’ll get the undefined value.
-        </p>
+
     </main>
 </body>
 
